@@ -138,54 +138,6 @@ cmd /c '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\V
 
 ## 🛠️ Technical Details
 
-### Project Structure
-```
-Transformer-From-Scratch-CPP/
-├── include/
-│   ├── Matrix.hpp              # core matrix operations
-│   ├── Tokenizer.hpp           # BPE tokenizer
-│   ├── Embedding.hpp           # token embedding layer
-│   ├── PositionalEncoding.hpp  # sinusoidal PE
-│   ├── LayerNorm.hpp           # layer normalization
-│   ├── MultiHeadAttention.hpp  # multi-head causal attention
-│   ├── FeedForward.hpp         # position-wise FFN
-│   ├── TransformerBlock.hpp    # single decoder block
-│   ├── Transformer.hpp         # full model + config + loss + optimizer
-│   ├── cuda_kernels.cuh        # CUDA kernel declarations
-│   └── json.hpp                # nlohmann/json (vendored)
-├── src/
-│   ├── Matrix.cpp              # CPU + GPU dispatch logic
-│   ├── cuda_kernels.cu         # CUDA kernels + memory pool
-│   ├── tokenizer/
-│   │   ├── buildVocab.cpp      # BPE vocabulary construction
-│   │   ├── encode.cpp          # text → token ids
-│   │   ├── decode.cpp          # token ids → text
-│   │   └── saveLoad.cpp        # vocab serialization
-│   ├── layers/
-│   │   ├── Embedding.cpp
-│   │   ├── PositionalEncoding.cpp
-│   │   ├── LayerNorm.cpp
-│   │   └── FeedForward.cpp
-│   ├── attention/
-│   │   ├── MultiHeadAttention.cpp  # forward + backward
-│   │   └── computeAttention.cpp    # scaled dot-product
-│   ├── transformer/
-│   │   ├── TransformerBlock.cpp
-│   │   ├── Transformer.cpp         # model orchestrator
-│   │   ├── CrossEntropyLoss.cpp
-│   │   └── AdamOptimizer.cpp
-│   ├── train.cpp                   # training entry point
-│   └── inference.cpp               # generation entry point
-├── config/
-│   └── model.json                  # hyperparameters
-├── data/
-│   └── input.txt                   # training corpus (Tiny Shakespeare)
-├── CMakeLists.txt
-├── .gitignore
-├── LICENSE
-└── README.md
-```
-
 ### Default Model Configuration
 
 | Hyperparameter | Value | Notes |
