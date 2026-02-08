@@ -1,0 +1,19 @@
+{
+    "dModel": 256,
+    "nHeads": 8,
+    "nLayers": 4,
+    "dFF": 1024,
+    "vocabSize": 2048,
+    "maxSeqLen": 128,
+    "learningRate": 0.0003,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "epsilon": 1e-8,
+    "weightDecay": 0.01,
+    "gradClip": 1.0,
+    "epochs": 10,
+    "batchSize": 32,
+    "dataFile": "data/input.txt",
+    "vocabFile": "data/vocab.json",
+    "weightsFile": "data/weights.json"
+}

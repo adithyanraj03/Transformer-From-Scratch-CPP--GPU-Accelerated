@@ -1,0 +1,23 @@
+# build artifacts
+build/
+cmake-build-*/
+*.exe
+*.o
+*.obj
+*.out
+*.bat
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# data artifacts (large files)
+data/weights.json
+data/vocab.json
+
+# OS
+Thumbs.db
+.DS_Store
